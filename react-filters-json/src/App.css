@@ -1,8 +1,18 @@
-.style-card{
-    background-color: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 13px;
+.style-card {
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 13px;
+}
 
+/* TO CORRECT */
+.header { 
+  margin-top: 50px;
+  display: flex;
+  /* align-items: center;
+  align-content: center;
+  align-items: center; */
+  justify-content: center;
+  flex-direction: row;
 }
