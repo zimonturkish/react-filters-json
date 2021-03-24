@@ -3,6 +3,7 @@ import listMovies from "./list-movies.json";
 import { Dropdown, DropdownButton } from "react-bootstrap";
 import "./App.css";
 
+// This component is responsible for the two filters
 class Header extends React.Component {
   //   constructor(props) {
   //     super(props);
@@ -17,7 +18,7 @@ class Header extends React.Component {
       .map((title, index) => (
         <Dropdown.Item key={index}>{title}</Dropdown.Item>
       ));
-    // console.log(titles);
+
     // array with the original language of every film
     const languages = listMovies.results.map((e) => e.original_language);
     // array with all the possible original languages (without duplicates)
@@ -30,13 +31,17 @@ class Header extends React.Component {
     return (
       <div className="header">
         {/* // FILTER TITLE */}
-        <div id="title">
-          <DropdownButton id="dropdown-basic-button" title="Title">
+        <div className="filters">
+          <label>Title:</label>
+          <DropdownButton id="title" title="--">
             {titles}
           </DropdownButton>
+        </div>
+        <div className="filters">
+          <label>Original language:</label>
 
           {/* FILTER LANGUAGE  */}
-          <DropdownButton id="dropdown-basic-button" title="Original language">
+          <DropdownButton id="language" title="--">
             {filteredLanguages}
           </DropdownButton>
         </div>

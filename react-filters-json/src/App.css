@@ -7,12 +7,20 @@
 }
 
 /* TO CORRECT */
-.header { 
+.header {
   margin-top: 50px;
   display: flex;
-  /* align-items: center;
-  align-content: center;
-  align-items: center; */
   justify-content: center;
   flex-direction: row;
+  flex-wrap: nowrap;
 }
+
+.filters {
+  margin-right: 15px;
+  width: 10rem;
+}
+
+#language, #title {
+  width: 10rem;
+}
+
