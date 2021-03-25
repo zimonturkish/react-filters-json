@@ -1,35 +1,25 @@
 import React from "react";
 import listMovies from "./list-movies.json";
-import { Card } from "react-bootstrap";
 import "./App.css";
+import DetailMovie from "./DetailMovie";
 
-class CardMovie extends React.Component {
+class ListMovies extends React.Component {
   render() {
     return (
       <div>
         {listMovies.results.map((film, index) => {
           return (
-            <div className="style-card" key={index}>
-              <Card style={{ width: "28rem" }}>
-                <Card.Img variant="top" src={film.backdrop_path} />
-                <Card.Body>
-                  <Card.Title>{film.title}</Card.Title>
-                  <hr></hr>
-                  <Card.Text>
-                    <b>Original title</b>: {film.original_title}
-                    <br />
-                    <b>Original language</b>: {film.original_language}
-                    <br />
-                    <b>Release Date</b>: {film.release_date}
-                    <br />
-                    <b>Vote average</b>: {film.vote_average}
-                    <br />
-                    <b>Vote counts</b>: {film.vote_count}
-                    <br />
-                    <b>Overview</b>: {film.overview}
-                  </Card.Text>
-                </Card.Body>
-              </Card>
+            <div value={index}>
+              <DetailMovie
+                image={film.backdrop_path}
+                title={film.title}
+                original_title={film.original_title}
+                original_language={film.original_language}
+                release_date={film.release_date}
+                vote_everage={film.vote_average}
+                vote_count={film.vote_count}
+                overview={film.overview}
+              />
             </div>
           );
         })}
@@ -37,4 +27,4 @@ class CardMovie extends React.Component {
     );
   }
 }
-export default CardMovie;
+export default ListMovies;
